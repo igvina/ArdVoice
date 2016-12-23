@@ -7,7 +7,7 @@ By @igvina
 * Configurable speed (from 0.8 to 1.3)
 
 ###Voice compressor:
-* Works with wav (only 8000 Hz, mono, 1 byte PCM_UNSIGNED). I recommend Audacity to convert to this format.
+* Works with wav (only 8000 Hz, mono, 1 byte PCM_UNSIGNED). I recommend Audacity to convert to this format
 * Configurable quality (from 0 to 10), default is 4
 * Good compression (from 88 bytes/s to 530 bytes/s)
 
