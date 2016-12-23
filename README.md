@@ -23,8 +23,8 @@ By @igvina
 
 	* examples:
 	
-        	"java -jar compressor.jar dog.wav -gs DOG -v -q 6"
-        	"java -jar compressor.jar merry.wav -v"
+        	"java -jar vocoder.jar dog.wav -gs DOG -v -q 6"
+        	"java -jar vocoder.jar merry.wav -v"
 	
 ###Voice library (0.1):
 
@@ -39,5 +39,3 @@ By @igvina
 * void playVoice(const char *audio, uint16_t startTime, uint16_t endTime, float speed);
 * void stopVoice();
 * boolean isVoicePlaying();
-	
-
