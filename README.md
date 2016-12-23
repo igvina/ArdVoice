@@ -4,7 +4,7 @@ By @igvina
 ###Voice library:
 * Play compressed audio (works better with voices)
 * Good speed but can cause slowdowns on 60 fps games 
-* Configurable speed (from 0.8 to 1.3)
+* Configurable speed (from 0.8 to 1.4)
 
 ###Voice compressor (vocoder):
 * Works with wav (only 8000 Hz, mono, 1 byte PCM_UNSIGNED). I recommend Audacity to convert to this format
