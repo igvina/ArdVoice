@@ -1,66 +1,43 @@
-#ArdBitmaplib: Compress and draw bitmaps on the Arduboy
+#ArdVoicelib: A library to play audio (voices) on the Arduboy
 By @igvina
 ##Features:
-###Bitmap library:
-* Works with compressed & uncompressed bitmaps.
-* Real-time image resize (downscale).
-* Horizontal/Vertical mirroring (fast).
-* Bitmap alignment.
+###Voice library:
+* Play compressed audio (works better with voices)
+* Good speed but can cause slowdowns on 60 fps games 
+* Configurable speed (from 0.8 to 1.3)
 
-###Bitmap compressor:
-* Compatible with PC/MAC/Linux (made with Java).
-* Good compression (better than Cabi).
-* Supports PNG, GIF (also animated gifs) & JPG.
-* Autogenerate Sketchs from images or animated gifs (great for no-developers).
+###Voice compressor:
+* Works with wav (only 8000 Hz, mono, 1 byte PCM_UNSIGNED). I recommend Audacity to convert to this format.
+* Configurable quality (from 0 to 10), default is 4
+* Good compression (from 88 bytes/s to 530 bytes/s)
 
 ##Usage:
-###Compressor (v1.0):
-* Syntax: java -jar compressor.jar image [-options]
+###Vocoder (v0.1):
+* Syntax: java -jar vocoder.jar audio.wav [-options]
 	* options:
-		* -gs SKETCH_FOLDER       Generate sketch code
-		* -fr VALUE               Change frame rate (only animated gifs)
-		* -v                      View compressed image
-		* -anp PREFIX             Array name prefix
-		* -ver                    Show encoder version
+		* -q VALUE		Quality (0 - 10) default: 4
+		* -gs SKETCH_FOLDER	Generate sketch code
+		* -v			Play compressed voice
+		* -anp PREFIX		Array name prefix
+		* -ver			Show vocoder version
 
 	* examples:
 	
-        	"java -jar compressor.jar dog.gif -gs DOG -fr 15"
-        	"java -jar compressor.jar dance.png -v"
-
-	* Notes: 
-		* Supports PNG, GIF (also animated gifs) & JPG
-		* Max image size = 128 x 64 pixels (resized if bigger)
-		* Encoding ratio could be bigger than 1 (worse than original image) 
+        	"java -jar compressor.jar dog.wav -gs DOG -v -q 6"
+        	"java -jar compressor.jar merry.wav -v"
 	
-###Bitmap library (1.0.0):
+###Voice library (0.1):
 
-* Copy lib (ArdBitmaplib.h and ArdBitmaplib.cpp) to your project folder
+* Copy lib (ArdVoicelib.h and ArdVoicelib.cpp) to your project folder
 * Add in .ino file:
-	* \#include "ArdBitmaplib.h"
-	* ArdBitmaplib ardbitmap (arduboy);
-* To draw call function: ardbitmap.drawCompressed (...) , ardbitmap.drawCompressedResized(...) , ardbitmap.drawBitmap (...) , drawBitmapResized(...)
+	* \#include "ArdVoicelib.h"
+	* ArdVoicelib ardvoice;
+* To play voice call function: ardvoice.playVoice (...).
 
 ####Methods:
+* void playVoice(const char *audio);
+* void playVoice(const char *audio, uint16_t startTime, uint16_t endTime, float speed);
+* void stopVoice();
+* boolean isVoicePlaying();
 	
-#####Compressed images:
-* void drawCompressed(int16_t sx, int16_t sy, const uint8_t *compBitmap, uint8_t color, uint8_t align, uint8_t mirror);   
-* void drawCompressedResized(int16_t sx, int16_t sy, const uint8_t *compBitmap, uint8_t color,uint8_t align, uint8_t mirror, float resize);
-	
-#####Uncompressed images:
-* void drawBitmap(int16_t sx, int16_t sy, const uint8_t *bitmap,uint8_t w, uint8_t h, uint8_t color, uint8_t align, uint8_t mirror);
-* void drawBitmapResized(int16_t sx, int16_t sy, const uint8_t *bitmap, uint8_t w,uint8_t h, uint8_t color,uint8_t align, uint8_t mirror, float resize);
 
-####Defines:		
-* #define ALIGN_H_LEFT
-* #define ALIGN_H_RIGHT
-* #define ALIGN_H_CENTER  
-* #define ALIGN_V_TOP
-* #define ALIGN_V_BOTTOM
-* #define ALIGN_V_CENTER
-* #define ALIGN_CENTER
-* #define ALIGN_NONE
-* #define MIRROR_NONE
-* #define MIRROR_HORIZONTAL
-* #define MIRROR_VERTICAL
-* #define MIRROR_HOR_VER
