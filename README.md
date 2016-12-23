@@ -11,6 +11,12 @@ By @igvina
 * Configurable quality (from 0 to 10), default is 4
 * Good compression (from 88 bytes/s to 530 bytes/s)
 
+###Video:
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=vtDYwqJ68gU
+" target="_blank"><img src="http://img.youtube.com/vi/vtDYwqJ68gU/0.jpg" 
+alt="DEMO" width="240" height="180" border="10" /></a>
+
 ##Usage:
 ###Vocoder (v0.1):
 * Syntax: java -jar vocoder.jar audio.wav [-options]
