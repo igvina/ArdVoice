@@ -77,11 +77,11 @@ void ArdVoicelib::playVoice(const char *audio, uint16_t startTime, uint16_t endT
   uint16_t chunks = ((readedByte & 0x0F) << 8) | (pgm_read_byte(&voiceName[0]) & 0xFF);
 
   numberOfCoeffs = (readedByte >> 4) & 0x0F;
-  beat = (startTime * 8) / 180;
+  beat = (startTime * 2/*8*/) / /*180*/45;
   sample1=0;
   sample_count=1;
   samplesMod = (uint8_t)(SAMPLES * speed);
-  beat_lenght =  endTime == 0 ?  chunks :  (endTime * 8) / 180;
+  beat_lenght =  endTime == 0 ?  chunks :  (endTime * 2/*8*/) / /*180*/45;
 
   //Init timer
   TIMSK4 = 0b00000100; 
