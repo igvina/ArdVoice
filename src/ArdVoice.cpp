@@ -15,9 +15,9 @@
 */
 
 
-// ArdVoicelib: version 0.1
+// ArdVoice: version 0.1
 
-#include "ArdVoicelib.h"
+#include "ArdVoice.h"
 
 //#define SAMPLES 180
 // 7812,5 ticks/s vs 8000 Hz -> 175,78
@@ -47,13 +47,13 @@ uint16_t beat;
 uint16_t beat_lenght;  
 
 
-ArdVoicelib::ArdVoicelib(){};
+ArdVoice::ArdVoice(){};
 
-void ArdVoicelib::playVoice(const char *audio){
+void ArdVoice::playVoice(const char *audio){
   playVoice(audio, 0, 0, 1.0);
 }
 
-void ArdVoicelib::playVoice(const char *audio, uint16_t startTime, uint16_t endTime, float speed){
+void ArdVoice::playVoice(const char *audio, uint16_t startTime, uint16_t endTime, float speed){
 
 
   if (!isSoundInit){
@@ -167,13 +167,13 @@ ISR(TIMER4_OVF_vect){
   }
 } 
 
-void  ArdVoicelib::stopVoice(){
+void  ArdVoice::stopVoice(){
   OCR4A = 127;
   TIMSK4 = 0;   
   sample1 = 0xFF;
 }
 
-boolean  ArdVoicelib::isVoicePlaying(){
+boolean  ArdVoice::isVoicePlaying(){
   return sample1 != 0xFF;
 }
 
@@ -198,8 +198,5 @@ uint8_t fastRand8() {
     i = 0;
   return x;
 }
-
-
-
 
 

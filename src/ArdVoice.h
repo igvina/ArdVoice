@@ -14,10 +14,10 @@
    limitations under the License.
 */
 
-// ArdVoicelib: version 0.1
+// ArdVoice: version 0.1
 
-#ifndef _ARDVOICELIB_H_
-#define _ARDVOICELIB_H_
+#ifndef ARDVOICE_H
+#define ARDVOICE_H
 
 #include <Arduino.h>
 
@@ -33,10 +33,10 @@
 
 uint8_t fastRand8();
   
-class ArdVoicelib
+class ArdVoice
 {
   public:
-    ArdVoicelib();
+    ArdVoice();
     void playVoice(const char *audio);
     void playVoice(const char *audio, uint16_t startTime, uint16_t endTime, float speed);  
     void stopVoice();

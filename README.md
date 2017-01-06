@@ -1,4 +1,4 @@
-#ArdVoicelib: A library to play audio (voices) on the Arduboy
+#ArdVoice: A library to play audio (voices) on the Arduboy
 By @igvina
 ##Features:
 ###Voice library:
@@ -34,10 +34,10 @@ alt="DEMO" width="240" height="180" border="10" /></a>
 	
 ###Voice library (0.1):
 
-* Copy lib (ArdVoicelib.h and ArdVoicelib.cpp) to your project folder
+* Copy lib (ArdVoice.h and ArdVoice.cpp) to your project folder
 * Add in .ino file:
-	* \#include "ArdVoicelib.h"
-	* ArdVoicelib ardvoice;
+	* \#include "ArdVoice.h"
+	* ArdVoice ardvoice;
 * To play voice call function: ardvoice.playVoice (...).
 
 ####Methods:
