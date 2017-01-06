@@ -32,7 +32,7 @@ alt="DEMO" width="240" height="180" border="10" /></a>
         	"java -jar vocoder.jar dog.wav -gs DOG -v -q 6"
         	"java -jar vocoder.jar merry.wav -v"
 	
-###Voice library (0.1):
+###Voice library (v0.1):
 
 * Install the ArdVoice library in the Arduino IDE.
 * Add in .ino file:
@@ -41,7 +41,7 @@ alt="DEMO" width="240" height="180" border="10" /></a>
 * To play voice call function: ardvoice.playVoice (...).
 
 ####Methods:
-* void playVoice(const char *audio);
-* void playVoice(const char *audio, uint16_t startTime, uint16_t endTime, float speed);
-* void stopVoice();
-* boolean isVoicePlaying();
+* `void playVoice(const char *audio);`
+* `void playVoice(const char *audio, uint16_t startTime, uint16_t endTime, float speed);`
+* `void stopVoice();`
+* `boolean isVoicePlaying();`
