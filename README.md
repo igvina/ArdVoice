@@ -34,10 +34,10 @@ alt="DEMO" width="240" height="180" border="10" /></a>
 	
 ###Voice library (0.1):
 
-* Copy lib (ArdVoice.h and ArdVoice.cpp) to your project folder
+* Install the ArdVoice library in the Arduino IDE.
 * Add in .ino file:
-	* \#include "ArdVoice.h"
-	* ArdVoice ardvoice;
+	* `#include <ArdVoice.h>`
+	* `ArdVoice ardvoice;`
 * To play voice call function: ardvoice.playVoice (...).
 
 ####Methods:

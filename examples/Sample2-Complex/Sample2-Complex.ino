@@ -1,14 +1,15 @@
 #include <Arduboy.h>
-#include "ArdBitmaplib.h"
-#include "ArdVoicelib.h"
+#include <ArdVoice.h>
 #include "voices.h"
 #include "bitmaps.h"
 
 #define ARRAY_LEN(a) (sizeof(a) / sizeof((a)[0]))
 
 Arduboy arduboy;
-ArdVoicelib ardvoice;
-ArdBitmaplib ardbitmap (arduboy.getBuffer());
+ArdVoice ardvoice;
+#define ARDBITMAP_SBUF arduboy.getBuffer()
+#include <ArdBitmap.h>
+ArdBitmap<WIDTH, HEIGHT> ardbitmap;
 unsigned long initTime;
 
 int voice_segment = 0;

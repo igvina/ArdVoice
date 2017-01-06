@@ -1,9 +1,9 @@
 #include <Arduboy.h>
-#include "ArdVoicelib.h"
+#include <ArdVoice.h>
 #include "voices.h"
 
 Arduboy arduboy;
-ArdVoicelib ardvoice;
+ArdVoice ardvoice;
 
 void setup() {
 	arduboy.begin();
