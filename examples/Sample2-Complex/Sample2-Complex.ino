@@ -1,11 +1,11 @@
-#include <Arduboy.h>
+#include <Arduboy2.h>
 #include <ArdVoice.h>
 #include "voices.h"
 #include "bitmaps.h"
 
 #define ARRAY_LEN(a) (sizeof(a) / sizeof((a)[0]))
 
-Arduboy arduboy;
+Arduboy2 arduboy;
 ArdVoice ardvoice;
 #define ARDBITMAP_SBUF arduboy.getBuffer()
 #include <ArdBitmap.h>
