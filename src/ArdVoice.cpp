@@ -28,7 +28,7 @@
 #define BUFFER_SIZE 16
 uint8_t soundBuffer[BUFFER_SIZE]; 
 
-uint8_t *voiceName;
+const uint8_t *voiceName;
 //MAX coeffs 10
 uint8_t numberOfCoeffs;
 int16_t coeffs[10];
@@ -49,11 +49,11 @@ uint16_t beat_lenght;
 
 ArdVoice::ArdVoice(){};
 
-void ArdVoice::playVoice(const char *audio){
+void ArdVoice::playVoice(const uint8_t *audio){
   playVoice(audio, 0, 0, 1.0);
 }
 
-void ArdVoice::playVoice(const char *audio, uint16_t startTime, uint16_t endTime, float speed){
+void ArdVoice::playVoice(const uint8_t *audio, uint16_t startTime, uint16_t endTime, float speed){
 
 
   if (!isSoundInit){
@@ -186,7 +186,7 @@ boolean  ArdVoice::isVoicePlaying(){
 uint8_t fastRand8() {
   static uint8_t state[STATE_BYTES] = { 0x87, 0xdd, 0xdc, 0x10, 0x35, 0xbc, 0x5c };
   static uint16_t c = 0x42;
-  static int i = 0;
+  static unsigned int i = 0;
   uint16_t t;
   uint8_t x;
 

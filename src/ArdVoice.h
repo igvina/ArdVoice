@@ -37,8 +37,8 @@ class ArdVoice
 {
   public:
     ArdVoice();
-    void playVoice(const char *audio);
-    void playVoice(const char *audio, uint16_t startTime, uint16_t endTime, float speed);  
+    void playVoice(const uint8_t *audio);
+    void playVoice(const uint8_t *audio, uint16_t startTime, uint16_t endTime, float speed);
     void stopVoice();
     boolean isVoicePlaying();
   private:
