@@ -1,8 +1,8 @@
-#include <Arduboy.h>
+#include <Arduboy2.h>
 #include <ArdVoice.h>
 #include "voices.h"
 
-Arduboy arduboy;
+Arduboy2 arduboy;
 ArdVoice ardvoice;
 
 void setup() {
