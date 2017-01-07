@@ -20,6 +20,7 @@ boolean merryPlayed = false;
 
 void setup() {
 	arduboy.begin();
+  arduboy.invert(!arduboy.audio.enabled());
 	arduboy.setFrameRate(60);
   initTime = millis();
 }
@@ -105,6 +106,15 @@ void loop() {
     threePlayed = false;
     merryPlayed = false;
   }
+  if(arduboy.pressed(UP_BUTTON)){
+    arduboy.audio.on();
+    arduboy.invert(false);
+  }
+  if(arduboy.pressed(DOWN_BUTTON)){
+    arduboy.audio.off();
+    arduboy.invert(true);
+  }
+
   arduboy.display();
 }
 

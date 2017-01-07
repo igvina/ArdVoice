@@ -58,8 +58,14 @@ void ArdVoice::playVoice(const char *audio, uint16_t startTime, uint16_t endTime
 
   if (!isSoundInit){
     isSoundInit = true;
-    pinMode(PIN_SPEAKER_1, OUTPUT);
-    pinMode(PIN_SPEAKER_2, OUTPUT);
+/*
+  The Arduboy2 library, or equivalent, will control the mode of the
+  speaker pins itself, in order to handle muting.
+  If the ArdVoice library is used where another library or sketch doesn't
+  control the speaker pins, uncomment the following two lines.
+*/
+//    pinMode(PIN_SPEAKER_1, OUTPUT);
+//    pinMode(PIN_SPEAKER_2, OUTPUT);
 
     TCCR4A = 0b01000010;    // Fast-PWM 8-bit
     TCCR4B = 0b00000001;    // 62500Hz
