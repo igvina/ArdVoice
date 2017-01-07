@@ -18,8 +18,8 @@ By @igvina
 alt="DEMO" width="240" height="180" border="10" /></a>
 
 ##Usage:
-###Vocoder (v0.1):
-* Syntax: java -jar vocoder.jar audio.wav [-options]
+###Vocoder (v0.2):
+* Syntax: java -jar vocoder0.2.jar audio.wav [-options]
 	* options:
 		* -q VALUE		Quality (0 - 10) default: 4
 		* -gs SKETCH_FOLDER	Generate sketch code
