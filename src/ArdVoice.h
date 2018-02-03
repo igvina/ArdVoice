@@ -22,8 +22,11 @@
 #include <Arduino.h>
 
 #define PIN_SPEAKER_1 5  /**< The pin number of the first lead of the speaker */
-#define PIN_SPEAKER_2 13 /**< The pin number of the second lead of the speaker */
-
+#ifndef AB_ALTERNATE_WIRING
+  #define PIN_SPEAKER_2 13 /**< The pin number of the second lead of the speaker */
+#else
+  #define PIN_SPEAKER_2 6 /**< Pro Micro alternative second lead of the speaker */    
+#endif
 
 //Fast pseudoo-random number generator, it's ok for noise
 #define STATE_BYTES 7
