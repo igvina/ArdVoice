@@ -72,8 +72,11 @@ void ArdVoice::playVoice(const uint8_t *audio, uint16_t startTime, uint16_t endT
     // It is faster, but generates an annoying noise/buzz
     //TCCR4B = 0b00000010;    // 62500Hz / 4
     OCR4C  = 0xFF;          // Resolution to 8-bit (TOP=0xFF)
-    OCR4A  = 0x80;
     OCR4A = 127;
+#ifdef AB_ALTERNATE_WIRING
+    TCCR4C = 0b01000101;
+    OCR4D  = 127;
+#endif  
   }
 
   voiceName = audio;
@@ -115,6 +118,9 @@ ISR(TIMER4_OVF_vect){
         if(beat > beat_lenght){
           // Stop timer and return
           OCR4A = 127;
+#ifdef AB_ALTERNATE_WIRING
+          OCR4D = 127;
+#endif          
           TIMSK4 = 0;   
           sample1 = 0xFF;
           return;
@@ -164,7 +170,9 @@ ISR(TIMER4_OVF_vect){
     temp = temp < 0 ? 0 : temp > 255 ? 255 : temp; 
 
     OCR4A = soundBuffer[sampleOffset] = temp & 0xFF;
-      
+#ifdef AB_ALTERNATE_WIRING
+      OCR4D = soundBuffer[sampleOffset];
+#endif          
     sample1++;
 
     // Jump to next beat
@@ -175,6 +183,9 @@ ISR(TIMER4_OVF_vect){
 
 void  ArdVoice::stopVoice(){
   OCR4A = 127;
+#ifdef AB_ALTERNATE_WIRING
+  OCR4D = 127;
+#endif          
   TIMSK4 = 0;   
   sample1 = 0xFF;
 }
